@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.55.0" />
+
+
+<title>Interaction terms in logit and probit model - Mengyao Lin</title>
+<meta property="og:title" content="Interaction terms in logit and probit model - Mengyao Lin">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+
+    <h1 class="article-title">Interaction terms in logit and probit model</h1>
+
+    
+
+    <div class="article-content">
+      <p>Short summary:</p>
+
+<p>1)  As I know, there is not a generally accepted idea about the relation between the main effect and the effect of interaction terms. And most statisticians do not recommend that analysist directly interpret the main effect through the interaction terms.</p>
+
+<p>2)  The null hypothesis of β3 (the coefficients of the interaction term) is there is no interaction effect. If the p-value is less than 0.05, we could reject the null hypothesis, say that there&rsquo;s an interaction effect.</p>
+
+<p>3)  Fortunately, we could do one right thing&ndash;calculate the coefficients. For more information, see <a href="http://www.cantab.net/users/filimon/cursoFCDEF/will/logistic_interact.pdf">Logistic Regression: Interaction Terms</a> .</p>
+
+<p>4)  Also, we could follow advice from Green (2010). Please see page 295-296 for more information.</p>
+
+<p>5)  Effective code is -inteff- (Norton,  Wang &amp; Ai, 2004) in Stata. Please note that this command is sensitive to the place of variables.</p>
+
+<p>6) Figures are useful for interpretation. You could learn this from Improving Tests of Theories Positing Interaction (Berry, Golder, &amp; Milton, 2012).</p>
+
+<p>7) Please see Chapter 2 Section 3 in “Interaction effects in multiple regression” (Jaccard &amp; Turrisi, 2003) for more information about the significance tests of interaction terms between a categorical variable and a continuous variable.</p>
+
+<hr />
+
+<p>In fact, this is a discussion rather than a correct answer. You could see some links relate to this topic and find disagreement. For example, link #1:<a href="https://www.theanalysisfactor.com/interactions-main-effects-not-significant/">Interpreting Interactions when Main Effects are Not Significant</a>, link #2 <a href="https://www.theanalysisfactor.com/interpret-main-effects-interaction/">Actually, You can Interpret Some Main Effects in the Presence of an Interaction</a>, and link #3 <a href="https://stats.stackexchange.com/questions/31027/how-to-interpret-main-effects-when-the-interaction-effect-is-not-significant">How to Interpret Main Effects When the Interaction Effect is not Significant</a>.</p>
+
+<p>The first person who conducted an in-depth discussion about this topic should be Chunrong Ai and Edward C. Norton (2003). They published a paper entitled “Interaction terms in logit and probit models” on Economics Letters. This journal is not included in the SSCI list, but it is indeed a decent journal. I believe what they said in their paper</p>
+
+<blockquote>
+<p>&ldquo;The interaction effect, which is often the variable of interest in applied econometrics, cannot be evaluated simply by looking at the sign, magnitude, or statistical significance of the coefficient on the interaction term when the model is nonlinear. Instead, the interaction effect requires computing the cross derivative or cross difference. &ldquo;</p>
+</blockquote>
+
+<p>Green (2010) had afterwards disagreements about Ai&rsquo;s paper. The focus of their argument is how to understand the partial effects of interaction terms. Green believes that statistical testing produces &ldquo;uninformative&rdquo; and &ldquo;misleading&rdquo; results. The reason why I am in favour of him is that the effect of interaction terms (i.e. X1* X2) is conditional on X1 and X2 (separate variables). This is complicated and dangerous for every analyst.</p>
+
+<p>Finally, I have to mention my perception of research. In general, an equation is based on a theory, then we collect data and analyze it for verifying the consistency of theory and reality (Brue &amp; Grant, 2013; Jaccard &amp; Turrisi, 2003).</p>
+
+<p>Then the codes below are probably useful. X1 and X2 are independent variables, Y1 is dependent variable.</p>
+
+<pre><code class="language-Stata">*   Generate an interaction term 
+generate inter = X1 * X2
+*   Probit regression
+probit $y Y1 X1 X2 inter $x
+*   Compute interaction effects and standard errors in the probit model above
+inteff $y Y1 X1 X2 inter $x
+</code></pre>
+
+<p>References:</p>
+
+<p>Ai, C., &amp; Norton, E. C. (2003). Interaction terms in logit and probit models. Economics Letters,80(1), 123-129. doi:10.1016/s0165-1765(03)00032-6</p>
+
+<p>Berry, W. D., Golder, M., &amp; Milton, D. (2012). Improving Tests of Theories Positing Interaction. The Journal of Politics,74(3), 653-671. doi:10.1017/s0022381612000199</p>
+
+<p>Greene, W. (2010). Testing hypotheses about interaction terms in nonlinear models. Economics Letters,107(2), 291-296. doi:10.1016/j.econlet.2010.02.014</p>
+
+<p>Jaccard, J., &amp; Turrisi, R. (2003). Interaction effects in multiple regression. Thousand Oaks: Sage.</p>
+
+<p>Norton, E. C., Wang, H., &amp; Ai, C. (2004). Computing interaction effects and standard errors in logit and probit models. The Stata Journal, 4(2), 154-167.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+
