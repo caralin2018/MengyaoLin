@@ -3,7 +3,7 @@ date: "2019-04-10"
 title: About
 ---
 
-This is Mengyao Lin. You could contact with me via e-mail. My e-mail address is <linmengyao777@gmail.com>.
+This is Mengyao Lin. Please feel free to contact me if you have any questions or comments. My e-mail address is <linmengyao777@gmail.com>.
 
 <center>
 <img src="https://github.com/caralin2018/IMG/raw/master/learning.jpg">

@@ -23,12 +23,30 @@
     </item>
     
     <item>
+      <title>Rs</title>
+      <link>/2019/04/29/rs/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/29/rs/</guid>
+      <description>This is a test.</description>
+    </item>
+    
+    <item>
+      <title>Test</title>
+      <link>/2019/04/29/test/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/04/29/test/</guid>
+      <description>This is a test. See whether the 0001 will be eliminated.</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>/about/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>This is Mengyao Lin. You could contact with me via e-mail. My e-mail address is linmengyao777@gmail.com.
+      <description>This is Mengyao Lin. Please feel free to contact me if you have any questions or comments. My e-mail address is linmengyao777@gmail.com.
  Image source</description>
     </item>
     
