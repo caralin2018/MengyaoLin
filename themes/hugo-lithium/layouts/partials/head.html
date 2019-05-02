@@ -37,4 +37,6 @@
 {{ end }}
 {{ partial "head_custom" . }}
 
+{{ if not .Site.IsServer }}
 {{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
