@@ -11,13 +11,13 @@ Short summary:
 
 1)	As I know, there is not a generally accepted idea about the relation between the main effect and the effect of interaction terms. And most statisticians do not recommend that analysist directly interpret the main effect through the interaction terms. 
 
-2)	The null hypothesis of β3 (the coefficients of the interaction term) is there is no interaction effect. If the p-value is less than 0.05, we could reject the null hypothesis, say that there's an interaction effect.
+2)	The null hypothesis of $\beta<sub>3</sub>$ (the coefficients of the interaction term) is there is no interaction effect. If the p-value is less than 0.05, we could reject the null hypothesis, say that there's an interaction effect.
 
 3)	Fortunately, we could do one right thing--calculate the coefficients. For more information, see [Logistic Regression: Interaction Terms](http://www.cantab.net/users/filimon/cursoFCDEF/will/logistic_interact.pdf) .
 
 4)	Also, we could follow advice from Green (2010). Please see page 295-296 for more information. 
 
-5)	Effective code is -inteff- (Norton,  Wang & Ai, 2004) in Stata. Please note that this command is sensitive to the place of variables.  
+5)	Effective code is `inteff` (Norton,  Wang & Ai, 2004) in Stata. Please note that this command is sensitive to the place of variables.  
 
 6) Figures are useful for interpretation. You could learn this from Improving Tests of Theories Positing Interaction (Berry, Golder, & Milton, 2012).
 
