@@ -3,8 +3,8 @@ relativeurls = false
 languageCode = "en-us"
 title = "Mengyao Lin"
 theme = "hugo-lithium"
-googleAnalytics = ""
-disqusShortname = ""
+googleAnalytics = "UA-139437747-1"
+disqusShortname = "mengyao-lin"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [permalinks]
