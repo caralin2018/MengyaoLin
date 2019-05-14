@@ -3,7 +3,7 @@ date: "2019-04-29"
 title: About
 ---
 
-Welcome! This is Mengyao Lin. Please feel free to contact me if you have any comments or questions. Leave a public comment below or send me an e-mail at <linmengyao777@gmail.com>. 
+Hi, this is Mengyao Lin. Please feel free to contact me if you have any comments or questions. Leave a public comment below or send me an e-mail at <linmengyao777@gmail.com>. 
 
 <center>
 <img src="https://github.com/caralin2018/IMG/raw/master/learning.jpg">
